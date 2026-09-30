@@ -1,0 +1,30 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+TestResults/
+*.nupkg
+
+# Godot
+.godot/
+.import/
+/game/export/
+export_presets.cfg
+*.translation
+mono_crash.*.json
+
+# IDEs
+.vs/
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Saídas de ferramentas (simulação headless)
+/tools/**/output/
+*.csv
+
+# SO
+.DS_Store
+Thumbs.db
