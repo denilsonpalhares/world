@@ -11,6 +11,7 @@ Regra: primeiro a simulação funcionando sem gráficos, depois a parte visual. 
 - ✅ Pronto quando: `dotnet build` e `dotnet test` passam
 
 ## Fase 1 — Esqueleto da simulação
+- [x] Decisões de estrutura do mundo ([docs/WORLD_DESIGN.md](docs/WORLD_DESIGN.md))
 - [ ] `World` (estado, RNG com seed, contador de ticks)
 - [ ] Laço de tick com pipeline de sistemas em ordem fixa
 - [ ] Fila de comandos (`ICommand`) processada no início do tick
@@ -18,8 +19,10 @@ Regra: primeiro a simulação funcionando sem gráficos, depois a parte visual. 
 - ✅ Pronto quando: teste de determinismo passa
 
 ## Fase 2 — Mundo mínimo
-- [ ] Regiões (terreno, recursos, dono, vizinhos)
-- [ ] Nações (regiões, capital, tesouro, leis ativas)
+- [ ] Definir conteúdo físico: relevo, biomas, recursos, rios (seção 5 do WORLD_DESIGN)
+- [ ] Grafo do mapa: províncias terrestres, zonas marítimas, adjacências, costas/portos, ilhas
+- [ ] Províncias (terreno, recursos, dono, vizinhos) e Estados
+- [ ] Nações (estados/províncias, capital, tesouro, leis ativas)
 - [ ] Pops (tamanho, profissão, cultura, escolaridade, renda, felicidade)
 - [ ] Gerador de mundo inicial
 - ✅ Pronto quando: o headless imprime um resumo do mundo

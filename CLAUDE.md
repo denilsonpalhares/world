@@ -100,6 +100,7 @@ godot --headless --path game --quit-after 2             # roda a cena principal 
   O editor Godot e os testes visuais rodam numa máquina **Windows**. A sincronização é feita pelo git
   (`git@github.com:denilsonpalhares/world.git`, branch `main`).
 - Etapas e progresso: [ROADMAP.md](ROADMAP.md). Marcar os itens concluídos.
+- Decisões de design do mundo: [docs/WORLD_DESIGN.md](docs/WORLD_DESIGN.md). Itens "Decidido" não mudam sem discussão.
 - Construir incrementalmente: primeiro o núcleo headless funcionando e testado, depois a visualização no Godot.
 - Mudanças de arquitetura (novos sistemas, formato de dados, contrato de comandos) devem ser discutidas antes.
 - Responder e documentar em português (pt-BR).
