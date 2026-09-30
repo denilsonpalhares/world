@@ -4,10 +4,10 @@ Regra: primeiro a simulação funcionando sem gráficos, depois a parte visual. 
 
 ## Fase 0 — Ambiente
 - [x] Godot 4.7.2 .NET instalado (`godot`)
-- [ ] .NET SDK 10 instalado
+- [x] .NET SDK 10 instalado
 - [x] `git init` + `.gitignore` + remoto GitHub
-- [ ] Solução com `Simulation`, `Simulation.Tests`, `tools/Headless`
-- [ ] Projeto Godot em `/game` referenciando `Simulation`
+- [x] Solução com `Simulation`, `Simulation.Tests`, `tools/Headless`
+- [x] Projeto Godot em `/game` referenciando `Simulation`
 - ✅ Pronto quando: `dotnet build` e `dotnet test` passam
 
 ## Fase 1 — Esqueleto da simulação

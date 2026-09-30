@@ -73,6 +73,20 @@ simulação, nunca ser roteirizado.
 - Nós Godot: scripts C# pequenos, apenas apresentação/binding. Lógica de jogo vai para `Simulation`.
 - Sem números mágicos de balanceamento no código: constantes de balanceamento vão para `/data`.
 
+## Comandos
+
+```bash
+dotnet build World.sln                                  # compila tudo (inclui o projeto Godot)
+dotnet test World.sln                                   # roda os testes
+dotnet run --project tools/Headless                     # simulação sem gráficos
+godot --headless --path game --build-solutions --quit   # compila pelo Godot
+godot --headless --path game --quit-after 2             # roda a cena principal sem tela
+```
+
+- `World.sln` (raiz) é a solução principal. `game/Game.sln` existe só porque o editor Godot a procura.
+- O projeto Godot é `game/Game.csproj` (`Godot.NET.Sdk/4.7.2`, `net10.0`) e referencia `src/Simulation`.
+- Arquivos `*.uid` gerados pelo Godot devem ser versionados.
+
 ## Testes e verificação
 
 - Toda regra de simulação nova deve ter teste em `Simulation.Tests`.
@@ -82,6 +96,10 @@ simulação, nunca ser roteirizado.
 
 ## Fluxo de trabalho
 
+- Ambiente: o desenvolvimento do núcleo roda num **Ubuntu sem interface gráfica** (Godot só com `--headless`).
+  O editor Godot e os testes visuais rodam numa máquina **Windows**. A sincronização é feita pelo git
+  (`git@github.com:denilsonpalhares/world.git`, branch `main`).
+- Etapas e progresso: [ROADMAP.md](ROADMAP.md). Marcar os itens concluídos.
 - Construir incrementalmente: primeiro o núcleo headless funcionando e testado, depois a visualização no Godot.
 - Mudanças de arquitetura (novos sistemas, formato de dados, contrato de comandos) devem ser discutidas antes.
 - Responder e documentar em português (pt-BR).
