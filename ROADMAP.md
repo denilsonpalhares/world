@@ -12,10 +12,11 @@ Regra: primeiro a simulação funcionando sem gráficos, depois a parte visual. 
 
 ## Fase 1 — Esqueleto da simulação
 - [x] Decisões de estrutura do mundo ([docs/WORLD_DESIGN.md](docs/WORLD_DESIGN.md))
-- [ ] `World` (estado, RNG com seed, contador de ticks)
-- [ ] Laço de tick com pipeline de sistemas em ordem fixa
-- [ ] Fila de comandos (`ICommand`) processada no início do tick
-- [ ] Carregador de dados JSON de `/data`
+- [x] `WorldState` (estado, RNG com seed, contador de ticks, calendário)
+- [x] Laço de tick com pipeline de sistemas em ordem fixa
+- [x] Fila de comandos (`ICommand`) processada no início do tick
+- [x] Carregador de dados JSON de `/data`
+- [x] Teste de determinismo
 - ✅ Pronto quando: teste de determinismo passa
 
 ## Fase 2 — Mundo mínimo

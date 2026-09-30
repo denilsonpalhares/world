@@ -1,0 +1,4 @@
+{
+  // Ano em que a partida começa (tick 0 = 01/01 deste ano).
+  "start_year": 1800
+}

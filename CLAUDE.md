@@ -33,6 +33,19 @@ simulação, nunca ser roteirizado.
 3. **Comunicação sim → UI por eventos/snapshots** (ex.: `WorldEvents`, relatórios por tick), não por polling
    de estruturas internas mutáveis.
 
+## Núcleo (`src/Simulation`)
+
+- `WorldState`: todo o estado mutável (tick, RNG, e futuramente províncias, nações, pops).
+  Todo campo novo de estado **deve** entrar em `WorldState.ComputeChecksum()`.
+- `Simulator.Step()`: executa comandos pendentes → roda `SystemPipeline` → avança o tick.
+- `SystemPipeline.CreateDefault()`: **único lugar** onde a ordem oficial dos sistemas é definida.
+- `ISimulationSystem`: um sistema por aspecto, com `SystemFrequency` (Daily/Monthly/Yearly).
+- `ICommand` / `CommandQueue`: alterações vindas de fora (jogador/IA).
+- `Core/WorldRandom`: RNG xoshiro256** com estado serializável (`GetState`/`FromState`).
+- `Core/GameDate`: calendário de 12 meses × 30 dias (360 dias/ano) com estações.
+- `Data/DataLoader`: JSON em snake_case; propriedades desconhecidas são erro; arquivos lidos em ordem alfabética.
+- Não criar tipos chamados `World` ou `Simulation` (conflitam com os namespaces `World.*`).
+
 ## Regras da simulação
 
 - **Tick determinístico.** A simulação avança em ticks discretos (1 tick = 1 dia; sistemas pesados podem rodar
